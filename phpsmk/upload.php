@@ -25,7 +25,7 @@
 
         // echo $name.'-'.$temp;
 
-        $ove_uploaded_file($temp,'gambar/'.$name);
-    }
+        $move_uploaded_file($temp,'gambar/'.$name);
+    
 
 ?>

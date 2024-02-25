@@ -1,8 +1,6 @@
-<?php
-
+<?php 
     require_once "../dbcontroller.php";
     $db=new DB;
-
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Comptible"content="ie=edge">
     <title>Admin Page | Aplikasi Restoran SMK</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 </head>
 <body>
    <class="container">
@@ -45,14 +43,13 @@
             <div class="col-md-9">
                 <?php
                 
-                    if (isset($_GET['f']) && isset($_GET['m'])) {
-                        $f=$_GET['f'];
-                        $m=$_GET['m'];
+                if (isset($_GET['f']) && isset($_GET['m'])) {
+                    $f = $_GET['f'];
+                    $m = $_GET['m'];
+                    $file = '../' . $f . '/' . $m . '.php';
 
-                        $file = '../'.$f.'/'.'.$m.'.'.php';
-
-                        require_once $file;
-                    }
+                    require_once $file;
+                }
 
                 ?>
 

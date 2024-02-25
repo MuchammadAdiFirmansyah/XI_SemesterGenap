@@ -27,9 +27,9 @@
     //     echo 'nailai salah';
     // }
     
-   if ($nilai >- 100 || $nilai <=0) [
+   if ($nilai >- 100 || $nilai <=0) {
     echo 'nialai salah';
-   ]else{
+   }else{
     echo 'nialai benar';
    }
 ?>
