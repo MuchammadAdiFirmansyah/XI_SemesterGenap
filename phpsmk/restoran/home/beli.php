@@ -3,6 +3,7 @@
 if (isset($_GET['hapus'])) {
     $id = $_GET['hapus'];
     unset($_SESSION['_' . $id]);
+    header("location:?f=home&m=beli");
 }
 
 if (isset($_GET['tambah'])) {
@@ -66,7 +67,7 @@ function keranjang()
     ';
 
     foreach ($_SESSION as $key => $value) {
-        if ($key <> 'pelanggan' && $key <> 'idpelanggan') {
+        if ($key <> 'pelanggan' && $key <> 'idpelanggan' && $key <> 'user' && $key <> 'level' && $key <> 'iduser') {
             $id = substr($key, 1);
 
             $sql = "SELECT * FROM tblmenu WHERE idmenu=$id";
@@ -96,4 +97,12 @@ function keranjang()
 
 ?>
 
+<?php
+if (!empty($total)) {
+?>
+
 <a class="btn btn-primary" href="?f=home&m=checkout&total=<?php echo $total ?>" role="button">CHECK OUT</a>
+
+<?php
+}
+?>
