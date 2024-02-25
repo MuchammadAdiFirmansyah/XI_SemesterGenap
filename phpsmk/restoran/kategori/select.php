@@ -39,8 +39,8 @@
             <tr>
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $r['kategori'] ?></td>
-                <td><?php echo $r['idkategori'] ?></td>
-                <td><?php echo $r['idkategori'] ?></td>
+                <td><a href="?f=kategori&m=delete&id=<?php echo $r['idkategori'] ?>">Delete Data</a></td>
+                <td><a href="?f=kategori&m=update&id=<?php echo $r['idkategori'] ?>">Update Data</a></td
             </tr>
         <?php endforeach ?>
     </tbody>
