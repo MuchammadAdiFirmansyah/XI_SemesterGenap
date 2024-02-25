@@ -1,60 +1,53 @@
-<?php
+<?php 
 
-    class DB{
-
-        private $host = "127.0.0.1";
-        private $user = "roote";
-        private $password = "";
-        private $database = "dbrestoran";
+    class DB {
+        private $host="127.0.0.1";
+        private $user="root";
+        private $password="";
+        private $database="dbrestoran";
         private $koneksi;
 
-        public function __construch()
-        {
-            $this->koneksi = $this->koneksiDB();
+        public function __construct() {
+            $this->koneksi=$this->koneksiDB();
         }
 
-
-        public function koneksiDB() 
-        {
-            $koneksi = mysqli_connect($this->host, $this->user, $this->password, $this->database);
+        public function koneksiDB() {
+            $koneksi= mysqli_connect($this->host, $this->user, $this->password, $this->database);
             return $koneksi;
         }
 
-        public function getALL($sql)
-        {
-            $result = mysqli_query($this->koneksi, $sql);
-            while ($row=mysqli_fetch_assoc($result)) {
+        public function getALL($sql) {
+            $result=mysqli_query($this->koneksi, $sql);
+            while($row=mysqli_fetch_assoc($result)) {
                 $data[]=$row;
             }
 
-            return $data;
+            if(!empty($data)) {
+                return $data;
+            }      
         }
 
-        public function getITEM($sql)
-        {
-            $result = mysqli_query($this->koneksi, $sql);
-            $row = mysqli_fetch_assoc($result);
+        public function getITEM($sql) {
+            $result=mysqli_query($this->koneksi, $sql);
+            $row=mysqli_fetch_assoc($result);
             return $row;
         }
 
-        public function rowCOUNT($sql)
-        {
-            $result = mysqli_query($this->koneksi, $sql);
-            $row = mysqli_num_rows($result);
-
+        public function rowCOUNT($sql) {
+            $result=mysqli_query($this->koneksi, $sql);
+            $count=mysqli_num_rows($result);
             return $count;
+
         }
-        public function runSQL($sql)
-    }  
 
-    
-    
+        public function runSQL($sql) {
+            $result=mysqli_query($this->koneksi, $sql);
+        }
 
-    foreach ($row as $key) {
-        echo $key['kateggori'].'<br>';
+        public function pesan($text="") {
+            echo $text;
+        }
     }
 
-
-    
-
+   
 ?>
