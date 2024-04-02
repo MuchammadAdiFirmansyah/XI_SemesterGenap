@@ -39,6 +39,16 @@
             </div>
             </div>
         </div>
+        <?php
+        
+            if (isset($_POST['simpan'])) {
+                $kategori=$_POST['kategori'];
+                $sql="INSERT INTO tblkategori VALUES('','$kategori')";
+
+                $db->runSQL($sql);
+                header("location:?f=kategori&m=select");
+            }
+        ?>
     </div>
 </body>
 </html>

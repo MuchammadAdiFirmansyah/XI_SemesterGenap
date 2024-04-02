@@ -4,7 +4,7 @@
     <form action="" method="post">
         <div class="form-group w-50">
             <label for="">Nama user</label>
-            <input type="text" name="user" required placeholder="isi user" class="form-control">
+            <input type="text" name="nama" required placeholder="isi user" class="form-control">
         </div>
 
         <div class="form-group w-50">
@@ -40,7 +40,7 @@
 
 <?php 
     if (isset($_POST['simpan'])) {
-        $user = $_POST['user'];
+        $user = $_POST['nama'];
         $email = $_POST['email'];
         $password = hash('sha256',  $_POST['password']);
         $konfirmasi = hash('sha256',  $_POST['konfirmasi']);

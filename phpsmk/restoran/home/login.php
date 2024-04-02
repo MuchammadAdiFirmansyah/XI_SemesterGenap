@@ -27,13 +27,13 @@
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $sql="SELECT * FROM tblpelanggan WHERE email='$email' AND password='$password' AND aktif=1";
+    $sql="SELECT * FROM tblpelanggan WHERE email='$email' AND password='$password' AND konfirmasi=1";
     $count = $db->rowCOUNT($sql);
 
     if ($count == 0) {
         echo "<center><h3>Email atau Password salah</h3></center>";
     } else {
-        $sql = "SELECT * FROM tblpelanggan WHERE email='$email' AND password='$password' AND aktif=1";
+        $sql = "SELECT * FROM tblpelanggan WHERE email='$email' AND password='$password' AND konfirmasi=1";
         $row = $db->getITEM($sql);
 
         $_SESSION['pelanggan'] = $row['email'];

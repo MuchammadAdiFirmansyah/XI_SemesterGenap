@@ -28,9 +28,7 @@
 
         <div class="row mt-4">
             <div class="col-md-3">
-                <a href="index.php">
-                    <h3>Admin Page</h3>
-                </a>
+                <a href="index.php"> <h3>Admin Page</h3></a>
             </div>
 
             <div class="col-md-9">

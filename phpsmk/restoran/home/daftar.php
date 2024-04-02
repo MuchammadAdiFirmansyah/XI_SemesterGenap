@@ -1,3 +1,5 @@
+
+<!-- require_once('C:\xampp\htdocs\XI_SemesterGenap\phpsmk\restoran\dbcontroller.php'); -->
 <h3>Registrasi Pelanggan</h3>
 
 <div>

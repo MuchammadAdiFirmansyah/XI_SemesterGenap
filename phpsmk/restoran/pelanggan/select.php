@@ -38,7 +38,7 @@
         <?php foreach ($row as $r): ?>
             <tr>
                 <?php 
-                    if ($r['aktif']==1) {
+                    if ($r['konfirmasi']==1) {
                         $status = 'AKTIF';
                     }
                     else {
@@ -48,7 +48,7 @@
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $r['pelanggan'] ?></td>
                 <td><?php echo $r['alamat'] ?></td>
-                <td><?php echo $r['telp'] ?></td>
+                <td><?php echo $r['telepon'] ?></td>
                 <td><?php echo $r['email'] ?></td>
                 <td><a href="?f=pelanggan&m=delete&id=<?php echo $r['idpelanggan'] ?>">Delete</a></td>
                 <td><a href="?f=pelanggan&m=update&id=<?php echo $r['idpelanggan'] ?>"><?php echo $status ?></a></td>

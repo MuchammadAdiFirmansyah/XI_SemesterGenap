@@ -1,6 +1,6 @@
 <!-- <h1>select order</h1> -->
 <?php
-$jumlahdata = $db->rowCOUNT("SELECT idorder FROM vorder ");
+$jumlahdata = $db->rowCOUNT("SELECT idorder FROM tblorder ");
 $banyak = 2;
 
 $halaman = ceil($jumlahdata / $banyak);
@@ -12,7 +12,7 @@ if (isset($_GET['p'])) {
     $mulai = 0;
 }
 
-$sql = "SELECT * FROM vorder ORDER BY status,idorder ASC LIMIT $mulai,$banyak";
+$sql = "SELECT * FROM tblorder ORDER BY status,idorder ASC LIMIT $mulai,$banyak";
 $row = $db->getALL($sql);
 
 $no = 1 + $mulai;

@@ -14,7 +14,7 @@
     <form action="" method="post">
         <div class="form-group w-50">
             <label for="">Nama user</label>
-            <input type="text" name="user" required value="<?php echo $row['user']?>" class="form-control">
+            <input type="text" name="user" required value="<?php echo $row['nama']?>" class="form-control">
         </div>
 
         <div class="form-group w-50">
@@ -50,7 +50,7 @@
 
 <?php 
     if (isset($_POST['simpan'])) {
-        $user = $_POST['user'];
+        $user = $_POST['nama'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $konfirmasi = $_POST['konfirmasi'];

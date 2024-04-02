@@ -20,7 +20,7 @@
 
 <?php
 
-$jumlahdata = $db->rowCOUNT("SELECT idorderdetail FROM vorderdetail ");
+$jumlahdata = $db->rowCOUNT("SELECT idorderdetail FROM tblorderdetail ");
 $banyak = 4;
 
 $halaman = ceil($jumlahdata / $banyak);
@@ -32,13 +32,13 @@ if (isset($_GET['p'])) {
     $mulai = 0;
 }
 
-$sql = "SELECT * FROM vorderdetail ORDER BY idorderdetail DESC LIMIT $mulai,$banyak";
+$sql = "SELECT * FROM tblorderdetail ORDER BY idorderdetail DESC LIMIT $mulai,$banyak";
 
 if (isset($_POST['simpan'])) {
     $tawal = $_POST['tawal'];
     $takhir = $_POST['takhir'];
 
-    $sql = "SELECT * FROM vorderdetail WHERE tglorder BETWEEN '$tawal' AND '$takhir' ";
+    $sql = "SELECT * FROM tblorderdetail WHERE tglorder BETWEEN '$tawal' AND '$takhir' ";
     // echo $sql;
 }
 

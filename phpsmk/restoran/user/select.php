@@ -13,8 +13,8 @@
         $mulai = 0;
     }
 
-    $sql = "SELECT * FROM tbluser ORDER BY user ASC LIMIT $mulai,$banyak";
-    $row = $db->getALL($sql);
+    $sql = "SELECT * FROM tbluser ORDER BY nama ASC LIMIT $mulai,$banyak";
+    $row = $db->getAll($sql);
 
     $no = 1+$mulai;
 ?>
@@ -47,7 +47,7 @@
             ?>
             <tr>
                 <td><?php echo $no++ ?></td>
-                <td><?php echo $r['user'] ?></td>
+                <td><?php echo $r['nama'] ?></td>
                 <td><?php echo $r['email'] ?></td>
                 <td><?php echo $r['level'] ?></td>
                 <td><a href="?f=user&m=delete&id=<?php echo $r['iduser'] ?>">Delete</a></td>
